@@ -18,44 +18,23 @@ class ExtratoScreen extends StatelessWidget {
       id: 'gerdau',
       message: 'COMPRA GERDAU LOJA 03',
       value: 8790.12,
-      date: '29/01',
+      date: '27/01',
       portion: 10,
     ),
     Transaction(
       id: 'gerdau',
       message: 'COMPRA GERDAU LOJA 03',
       value: 8790.12,
-      date: '27/01',
+      date: '28/01',
       portion: 11,
     ),
     Transaction(
       id: 'gerdau',
       message: 'COMPRA GERDAU LOJA 03',
       value: 8790.12,
-      date: '28/01',
+      date: '29/01',
       portion: 12,
     ),
-    Transaction(
-      id: 'unilever',
-      message: 'COMPRA GERDAU LOJA 03',
-      value: 8790.12,
-      date: '29/01',
-      portion: 8,
-    ),
-    // Transaction(
-    //   id: 'Unilever',
-    //   message: 'COMPRA Unilever LOJA 03',
-    //   value: 8790.12,
-    //   date: '03/01',
-    //   portion: 12,
-    // ),
-    // Transaction(
-    //   id: 'Unilever',
-    //   message: 'COMPRA Unilever LOJA 03',
-    //   value: 8790.12,
-    //   date: '15/01',
-    //   portion: 12,
-    // ),
   ];
 
   @override
