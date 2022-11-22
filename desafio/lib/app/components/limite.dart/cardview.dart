@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:desafio/models/credits.dart';
-import 'package:desafio/screens/extrato.screen.dart';
+import 'package:desafio/app/models/credits.dart';
+import 'package:desafio/app/screens/extrato.screen.dart';
 import 'package:flutter/material.dart';
 
 class CardView extends StatelessWidget {
@@ -17,7 +17,7 @@ class CardView extends StatelessWidget {
         MaterialPageRoute(builder: (context) {
           return ExtratoScreen(credits.id);
         }),
-      ), 
+      ),
       child: Container(
         margin: EdgeInsets.fromLTRB(16, 16, 16, 8),
         padding: EdgeInsets.all(16),
@@ -64,7 +64,7 @@ class CardView extends StatelessWidget {
             SizedBox(height: 4),
             LinearProgressIndicator(
               color: Color.fromRGBO(245, 245, 245, 1),
-              
+
               value: 30,
               minHeight: 8,
               // ignore: prefer_const_literals_to_create_immutables

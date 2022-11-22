@@ -1,5 +1,5 @@
-import 'package:desafio/models/transaction.dart';
-import 'package:desafio/screens/components/extrato.dart/eachBuy.dart';
+import 'package:desafio/app/models/transaction.dart';
+import 'package:desafio/app/components/extrato.dart/eachBuy.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
