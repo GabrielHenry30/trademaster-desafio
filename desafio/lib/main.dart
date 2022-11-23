@@ -1,7 +1,7 @@
-import 'datas/fictitiousData.dart';
+import 'app/other/datas/fictitiousData.dart';
 import 'package:flutter/material.dart';
-import 'screens/limite.screen.dart';
-import 'screens/extrato.screen.dart';
+import 'app/modules/limit/features/limit_feature/limite.screen.dart';
+import 'app/modules/limit/features/extract_feature/extrato.screen.dart';
 
 void main() => runApp(const WireFlow());
 

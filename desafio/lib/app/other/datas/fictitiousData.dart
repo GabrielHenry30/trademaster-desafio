@@ -1,5 +1,5 @@
-import 'package:desafio/app/models/credits.dart';
-import 'package:desafio/app/models/transaction.dart';
+import 'package:desafio/app/other/models/credits.dart';
+import 'package:desafio/app/other/models/transaction.dart';
 
 class FictitiousData {
   final _creditView = [

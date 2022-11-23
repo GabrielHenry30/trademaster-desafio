@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:desafio/app/models/transaction.dart';
-import 'package:desafio/app/components/extrato.dart/listBuy.dart';
-import 'package:desafio/app/screens/limite.screen.dart';
+import 'package:desafio/app/modules/limit/features/extract_feature/components/listBuy.dart';
+import 'package:desafio/app/other/models/transaction.dart';
+import 'package:desafio/app/modules/limit/features/limit_feature/limite.screen.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';

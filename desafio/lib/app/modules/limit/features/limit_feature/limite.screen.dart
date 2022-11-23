@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
-import 'package:desafio/app/models/credits.dart';
-import 'package:desafio/app/components/limite.dart/cardview.dart';
+import 'package:desafio/app/other/models/credits.dart';
+import 'package:desafio/app/other/screens/components/limite.dart/cardview.dart';
 import 'package:flutter/material.dart';
-import '../datas/fictitiousData.dart';
+import '../../../../other/datas/fictitiousData.dart';
 
 class LimiteScreen extends StatelessWidget {
   LimiteScreen({super.key});

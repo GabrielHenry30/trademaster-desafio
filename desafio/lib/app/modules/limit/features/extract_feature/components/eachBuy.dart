@@ -1,5 +1,5 @@
 // ignore: file_names
-import 'package:desafio/app/models/transaction.dart';
+import 'package:desafio/app/other/models/transaction.dart';
 import 'package:flutter/material.dart';
 
 class EachBuy extends StatelessWidget {
