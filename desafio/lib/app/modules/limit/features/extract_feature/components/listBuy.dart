@@ -1,5 +1,5 @@
 import 'package:desafio/app/modules/limit/features/extract_feature/components/eachBuy.dart';
-import 'package:desafio/app/other/models/transaction.dart';
+import 'package:desafio/app/modules/limit/models/transaction.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';

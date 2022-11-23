@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors
-
-import 'package:desafio/app/other/models/credits.dart';
 import 'package:desafio/app/modules/limit/features/extract_feature/extrato.screen.dart';
+import 'package:desafio/app/modules/limit/limit_module.dart';
+import 'package:desafio/app/modules/limit/models/credits.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class CardView extends StatelessWidget {
   // final id;
@@ -12,12 +13,7 @@ class CardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) {
-          return ExtratoScreen(credits.id);
-        }),
-      ), 
+      onTap: () => Modular.to.navigate(LimitModule.extractCompleteRoute),
       child: Container(
         margin: EdgeInsets.fromLTRB(16, 16, 16, 8),
         padding: EdgeInsets.all(16),
@@ -64,7 +60,7 @@ class CardView extends StatelessWidget {
             SizedBox(height: 4),
             LinearProgressIndicator(
               color: Color.fromRGBO(245, 245, 245, 1),
-              
+
               value: 30,
               minHeight: 8,
               // ignore: prefer_const_literals_to_create_immutables

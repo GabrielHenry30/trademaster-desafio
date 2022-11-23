@@ -1,13 +1,15 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:desafio/app/modules/limit/features/extract_feature/components/listBuy.dart';
-import 'package:desafio/app/other/models/transaction.dart';
-import 'package:desafio/app/modules/limit/features/limit_feature/limite.screen.dart';
+import 'package:desafio/app/modules/limit/limit_module.dart';
+import 'package:desafio/app/modules/limit/models/transaction.dart';
+import 'package:desafio/app/modules/limit/features/limit_feature/limite_screen.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class ExtratoScreen extends StatelessWidget {
   final id;
@@ -43,12 +45,7 @@ class ExtratoScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         leading: GestureDetector(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) {
-              return LimiteScreen();
-            }),
-          ),
+          onTap: () => Modular.to.navigate(LimitModule.route),
           child: Image.asset(
             ('assets/image/backArrow.png'),
             width: 24,
