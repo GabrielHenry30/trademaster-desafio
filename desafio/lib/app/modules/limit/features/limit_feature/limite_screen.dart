@@ -7,18 +7,7 @@ import '../../../../../fictitiousData.dart';
 class LimiteScreen extends StatelessWidget {
   LimiteScreen({super.key});
 
-  final _limitsCards = [
-    Credits(
-      id: 'gerdau',
-      maxCredit: 105690,
-      usedCredit: 72463.90,
-    ),
-    Credits(
-      id: 'unilever',
-      maxCredit: 105690,
-      usedCredit: 33555.50,
-    )
-  ];
+  final _credits = FictitiousData().credits;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +29,7 @@ class LimiteScreen extends StatelessWidget {
       ),
       body: GestureDetector(
         child: Column(children: [
-          ..._limitsCards.map((cv) {
+          ..._credits.map((cv) {
             return CardView(cv);
           }).toList(),
         ]),

@@ -1,43 +1,19 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:desafio/app/modules/limit/features/extract_feature/components/listBuy.dart';
 import 'package:desafio/app/modules/limit/limit_module.dart';
 import 'package:desafio/app/modules/limit/models/transaction.dart';
-import 'package:desafio/app/modules/limit/features/limit_feature/limite_screen.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
+import 'package:desafio/app/modules/limit/services/limit_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:desafio/fictitiousData.dart';
 
 class ExtratoScreen extends StatelessWidget {
   final id;
   ExtratoScreen(this.id);
 
-  final _allTransactions = [
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 03',
-      value: 8790.12,
-      date: '27/01',
-      portion: 10,
-    ),
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 03',
-      value: 8790.12,
-      date: '28/01',
-      portion: 11,
-    ),
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 03',
-      value: 8790.12,
-      date: '29/01',
-      portion: 12,
-    ),
-  ];
+  final _allTransactions = FictitiousData().transactions;
+
+  //  List<Transaction> listTransaction = LimitServices;
 
   @override
   Widget build(BuildContext context) {

@@ -1,14 +1,14 @@
-// ignore_for_file: prefer_const_constructors
-import 'package:desafio/app/modules/limit/features/extract_feature/extrato.screen.dart';
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
 import 'package:desafio/app/modules/limit/limit_module.dart';
 import 'package:desafio/app/modules/limit/models/credits.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class CardView extends StatelessWidget {
-  // final id;
   final Credits credits;
-  const CardView(this.credits);
+  CardView(this.credits);
+
+  // final limitController = LimitController();
 
   @override
   Widget build(BuildContext context) {

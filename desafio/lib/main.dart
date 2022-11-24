@@ -8,7 +8,7 @@ void main() =>
 class WireFlowState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Screens',
       initialRoute: LimitModule.route,
     ).modular();

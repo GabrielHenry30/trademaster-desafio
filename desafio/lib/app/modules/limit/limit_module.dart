@@ -1,5 +1,4 @@
 import 'package:desafio/app/modules/limit/features/extract_feature/extrato.screen.dart';
-import 'package:desafio/app/modules/limit/features/limit_feature/limit_controller.dart';
 import 'package:desafio/app/modules/limit/features/limit_feature/limite_screen.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
