@@ -17,7 +17,6 @@ class ExtratoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final transactions = Provider.of<ExtractController>(context);
 
-    print(transactions.getExtract(id));
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(

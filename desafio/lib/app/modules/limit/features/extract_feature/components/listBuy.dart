@@ -5,12 +5,11 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 
 class ListBuys extends StatelessWidget {
-  final Transaction tr;
-  ListBuys(this.tr);
+  final List<Transaction> list;
+  ListBuys(this.list);
 
   @override
   Widget build(BuildContext context) {
-    print(tr);
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -19,18 +18,16 @@ class ListBuys extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 16, 0, 8),
             child: Text(
-              tr.date,
+              list.first.date,
               style: const TextStyle(
                   fontSize: 16,
                   fontFamily: 'Open Sans',
                   fontWeight: FontWeight.bold),
             ),
           ),
-          EachBuy(
-            tr.message,
-            tr.value,
-            tr.portion,
-          ),
+          ...list.map((tr) {
+            return EachBuy(tr.message, tr.value, tr.portion);
+          }).toList()
         ],
       ),
     );

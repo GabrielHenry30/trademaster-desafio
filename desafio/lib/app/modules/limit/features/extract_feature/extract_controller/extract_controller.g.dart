@@ -29,11 +29,22 @@ mixin _$ExtractController on _ExtractController, Store {
       ActionController(name: '_ExtractController', context: context);
 
   @override
-  List<Transaction> getExtract(String id) {
+  List<List<Transaction>> getExtract(String id) {
     final _$actionInfo = _$_ExtractControllerActionController.startAction(
         name: '_ExtractController.getExtract');
     try {
       return super.getExtract(id);
+    } finally {
+      _$_ExtractControllerActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  List<Transaction> getAllExtract() {
+    final _$actionInfo = _$_ExtractControllerActionController.startAction(
+        name: '_ExtractController.getAllExtract');
+    try {
+      return super.getAllExtract();
     } finally {
       _$_ExtractControllerActionController.endAction(_$actionInfo);
     }

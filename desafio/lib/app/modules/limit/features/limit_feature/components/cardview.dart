@@ -6,7 +6,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 class CardView extends StatelessWidget {
   final Credits credits;
-  CardView(this.credits);
+  const CardView(this.credits);
 
   // final limitController = LimitController();
 
