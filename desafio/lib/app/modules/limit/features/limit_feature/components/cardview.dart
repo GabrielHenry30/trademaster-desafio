@@ -13,7 +13,10 @@ class CardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Modular.to.navigate(LimitModule.extractCompleteRoute),
+      onTap: () => Modular.to.navigate(
+        LimitModule.extractCompleteRoute,
+        arguments: credits.id,
+      ),
       child: Container(
         margin: EdgeInsets.fromLTRB(16, 16, 16, 8),
         padding: EdgeInsets.all(16),

@@ -12,8 +12,21 @@ abstract class _LimitController with Store {
   _LimitController(this._limitService);
 
   @observable
-  List<Credits> credt = [];
+  List<Credits> credits = [
+    Credits(
+      id: 'gerdau',
+      maxCredit: 105690,
+      usedCredit: 72463.90,
+    ),
+    Credits(
+      id: 'unilever',
+      maxCredit: 105690,
+      usedCredit: 72463.90,
+    )
+  ];
 
-  // @action
-
+  @action
+  List<Credits> getCredit() {
+    return credits;
+  }
 }

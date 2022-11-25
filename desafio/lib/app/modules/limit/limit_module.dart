@@ -14,7 +14,13 @@ class LimitModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-    ChildRoute(route, child: (_, args) => LimiteScreen()),
-    ChildRoute(extractCompleteRoute, child: (_, args) => ExtratoScreen(args))
+    ChildRoute(
+      route,
+      child: (_, args) => LimiteScreen(),
+    ),
+    ChildRoute(
+      extractCompleteRoute,
+      child: (_, args) => ExtratoScreen(args.data),
+    ),
   ];
 }

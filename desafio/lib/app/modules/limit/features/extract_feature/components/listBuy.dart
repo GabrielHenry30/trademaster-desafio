@@ -10,6 +10,7 @@ class ListBuys extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(tr);
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,

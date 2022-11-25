@@ -1,16 +1,15 @@
 // ignore_for_file: prefer_const_constructors
-import 'package:desafio/app/modules/limit/models/credits.dart';
+import 'package:desafio/app/modules/limit/features/limit_feature/limit_controller/limit_controller.dart';
 import 'package:desafio/app/modules/limit/features/limit_feature/components/cardview.dart';
 import 'package:flutter/material.dart';
-import '../../../../../fictitiousData.dart';
+import 'package:provider/provider.dart';
 
 class LimiteScreen extends StatelessWidget {
   LimiteScreen({super.key});
 
-  final _credits = FictitiousData().credits;
-
   @override
   Widget build(BuildContext context) {
+    final credits = Provider.of<LimitController>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -29,7 +28,7 @@ class LimiteScreen extends StatelessWidget {
       ),
       body: GestureDetector(
         child: Column(children: [
-          ..._credits.map((cv) {
+          ...credits.getCredit().map((cv) {
             return CardView(cv);
           }).toList(),
         ]),
