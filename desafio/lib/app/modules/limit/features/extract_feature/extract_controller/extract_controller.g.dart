@@ -29,17 +29,6 @@ mixin _$ExtractController on _ExtractController, Store {
       ActionController(name: '_ExtractController', context: context);
 
   @override
-  void setListTransaction() {
-    final _$actionInfo = _$_ExtractControllerActionController.startAction(
-        name: '_ExtractController.setListTransaction');
-    try {
-      return super.setListTransaction();
-    } finally {
-      _$_ExtractControllerActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
   List<List<Transaction>> getExtract(String id) {
     final _$actionInfo = _$_ExtractControllerActionController.startAction(
         name: '_ExtractController.getExtract');
@@ -56,40 +45,6 @@ mixin _$ExtractController on _ExtractController, Store {
         name: '_ExtractController.getAllExtract');
     try {
       return super.getAllExtract();
-    } finally {
-      _$_ExtractControllerActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  List<Transaction> getTransactionById(String id) {
-    final _$actionInfo = _$_ExtractControllerActionController.startAction(
-        name: '_ExtractController.getTransactionById');
-    try {
-      return super.getTransactionById(id);
-    } finally {
-      _$_ExtractControllerActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  List<String> getDates(List<Transaction> transactionsOrderById) {
-    final _$actionInfo = _$_ExtractControllerActionController.startAction(
-        name: '_ExtractController.getDates');
-    try {
-      return super.getDates(transactionsOrderById);
-    } finally {
-      _$_ExtractControllerActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  List<List<Transaction>> getTransactionsByDate(
-      List<Transaction> listTransactionOrderById, List<String> dates) {
-    final _$actionInfo = _$_ExtractControllerActionController.startAction(
-        name: '_ExtractController.getTransactionsByDate');
-    try {
-      return super.getTransactionsByDate(listTransactionOrderById, dates);
     } finally {
       _$_ExtractControllerActionController.endAction(_$actionInfo);
     }

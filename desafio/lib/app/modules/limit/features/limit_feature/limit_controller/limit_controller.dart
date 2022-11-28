@@ -12,12 +12,6 @@ abstract class _LimitController with Store {
   @observable
   List<Credits> credits = [];
 
-  // @action
-  // void setListCredits() {
-  //   final List<Credits> listCredit = _limitService.getListCredit();
-  //   credits = listCredit;
-  // }
-
   @action
   List<Credits> getCredit() {
     final List<Credits> listCredit = _limitService.getListCredit();

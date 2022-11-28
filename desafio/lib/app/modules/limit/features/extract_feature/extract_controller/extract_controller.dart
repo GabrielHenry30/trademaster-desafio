@@ -15,12 +15,6 @@ abstract class _ExtractController with Store {
   //retorna uma lista pronta dos extratos a serem mostrados para cada ID
 
   @action
-  void setListTransaction() {
-    final List<Transaction> listTransactions = _limitService.getListTransaction();
-    allTransactions = listTransactions;
-  }
-
-  @action
   List<List<Transaction>> getExtract(String id) {
     List<Transaction> transactionsOrderById = [];
     List<String> dates = [];
