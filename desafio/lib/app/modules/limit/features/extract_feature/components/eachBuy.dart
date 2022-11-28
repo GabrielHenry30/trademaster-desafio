@@ -11,10 +11,7 @@ class EachBuy extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        // Observer(
-        // builder: (_) =>
-        Container(
+    return Container(
       color: Colors.white,
       margin: const EdgeInsets.fromLTRB(16, 8, 16, 8),
       child: Column(
@@ -55,7 +52,6 @@ class EachBuy extends StatelessWidget {
           ),
         ],
       ),
-      // ),
     );
   }
 }

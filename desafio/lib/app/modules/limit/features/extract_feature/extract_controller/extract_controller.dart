@@ -10,116 +10,19 @@ abstract class _ExtractController with Store {
   LimitServices _limitService;
   _ExtractController(this._limitService);
 
-  // @observable
-  // List<Transaction> transactions = _limitService.getListTransaction();
-
   @observable
-  List<Transaction> allTransactions = [
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 29',
-      value: 1000.00,
-      date: '29/01',
-      portion: 1,
-    ),
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 29',
-      value: 1000.00,
-      date: '29/01',
-      portion: 10,
-    ),
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 29',
-      value: 1000.00,
-      date: '29/01',
-      portion: 10,
-    ),
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 28',
-      value: 2000.12,
-      date: '28/01',
-      portion: 11,
-    ),
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 28',
-      value: 8790.12,
-      date: '28/01',
-      portion: 11,
-    ),
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 27',
-      value: 8790.12,
-      date: '27/01',
-      portion: 11,
-    ),
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 27',
-      value: 9000.00,
-      date: '27/01',
-      portion: 10,
-    ),
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 27',
-      value: 8500.00,
-      date: '27/01',
-      portion: 11,
-    ),
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 27',
-      value: 8000.00,
-      date: '27/01',
-      portion: 11,
-    ),
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 27',
-      value: 8000.00,
-      date: '27/01',
-      portion: 11,
-    ),
-    Transaction(
-      id: 'unilever',
-      message: 'COMPRA UNILEVER LOJA 03',
-      value: 8790.12,
-      date: '29/01',
-      portion: 12,
-    ),
-    Transaction(
-      id: 'unilever',
-      message: 'COMPRA UNILEVER LOJA 03',
-      value: 8790.12,
-      date: '29/01',
-      portion: 12,
-    ),
-    Transaction(
-      id: 'unilever',
-      message: 'COMPRA UNILEVER LOJA 03',
-      value: 8790.12,
-      date: '28/01',
-      portion: 12,
-    ),
-    Transaction(
-      id: 'unilever',
-      message: 'COMPRA UNILEVER LOJA 03',
-      value: 8790.12,
-      date: '27/01',
-      portion: 12,
-    ),
-  ];
-
+  List<Transaction> allTransactions = [];
   //retorna uma lista pronta dos extratos a serem mostrados para cada ID
+
+  @action
+  void setListTransaction() {
+    final List<Transaction> listTransactions = _limitService.getListTransaction();
+    allTransactions = listTransactions;
+  }
+
   @action
   List<List<Transaction>> getExtract(String id) {
     List<Transaction> transactionsOrderById = [];
-    List<Transaction> transactionsOrderByDate = [];
     List<String> dates = [];
     List<List<Transaction>> transactionsGroupByDate = [];
 
@@ -133,11 +36,12 @@ abstract class _ExtractController with Store {
   //retorna todos os extratos
   @action
   List<Transaction> getAllExtract() {
+    final List<Transaction> listTransactions = _limitService.getListTransaction();
+    allTransactions = listTransactions;
     return allTransactions;
   }
 
   //retorna uma lista de transações por id
-  @action
   List<Transaction> getTransactionById(String id) {
     List<Transaction> allTransactions = getAllExtract();
     List<Transaction> transactionsOrderById = [];
@@ -155,7 +59,6 @@ abstract class _ExtractController with Store {
   }
 
   //retorna uma lista de todas as datas de uma lista de transações de UM id
-  @action
   List<String> getDates(List<Transaction> transactionsOrderById) {
     List<String> dates = [];
 
@@ -175,7 +78,6 @@ abstract class _ExtractController with Store {
   }
 
   //retorna uma lista de lista de transações agrupadas por data
-  @action
   List<List<Transaction>> getTransactionsByDate(List<Transaction> listTransactionOrderById, List<String> dates) {
     List<List<Transaction>> transactionsGroupByDate = [];
 

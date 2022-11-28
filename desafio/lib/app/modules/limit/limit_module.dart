@@ -1,4 +1,5 @@
 import 'package:desafio/app/modules/limit/features/extract_feature/extrato.screen.dart';
+import 'package:desafio/app/modules/limit/features/limit_feature/limit_controller/limit_controller.dart';
 import 'package:desafio/app/modules/limit/features/limit_feature/limite_screen.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -9,7 +10,7 @@ class LimitModule extends Module {
 
   @override
   final List<Bind> binds = [
-    // Bind((i) => LimitController)
+    // Bind.singleton((i) => LimitController(i())),
   ];
 
   @override

@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors
 import 'package:desafio/app/modules/limit/features/limit_feature/limit_controller/limit_controller.dart';
 import 'package:desafio/app/modules/limit/features/limit_feature/components/cardview.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +11,7 @@ class LimiteScreen extends StatelessWidget {
     final credits = Provider.of<LimitController>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Limites',
           style: TextStyle(
             color: Color(0xFF09A2B6),
@@ -22,7 +21,7 @@ class LimiteScreen extends StatelessWidget {
           ),
           textAlign: TextAlign.right,
         ),
-        backgroundColor: Color(0xFFF8FAFA),
+        backgroundColor: const Color(0xFFF8FAFA),
         elevation: 0,
         centerTitle: true,
       ),

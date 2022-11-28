@@ -8,8 +8,6 @@ class CardView extends StatelessWidget {
   final Credits credits;
   const CardView(this.credits);
 
-  // final limitController = LimitController();
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

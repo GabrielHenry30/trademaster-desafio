@@ -19,41 +19,38 @@ class ExtratoScreen extends StatelessWidget {
     final transactions = Provider.of<ExtractController>(context);
 
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          leading: GestureDetector(
-            onTap: () => Modular.to.navigate(LimitModule.route),
-            child: Image.asset(
-              ('assets/image/backArrow.png'),
-              width: 24,
-              height: 24,
-            ),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () => Modular.to.navigate(LimitModule.route),
+          child: Image.asset(
+            ('assets/image/backArrow.png'),
+            width: 24,
+            height: 24,
           ),
-          title: Text(
-            'Extrato',
-            style: TextStyle(
-              color: Color(0xFF09A2B6),
-              fontSize: 16,
-              fontFamily: 'OpenSans',
-              fontWeight: FontWeight.bold,
-            ),
-            textAlign: TextAlign.right,
-          ),
-          backgroundColor: Color(0xFFF8FAFA),
-          elevation: 0,
-          centerTitle: true,
         ),
-        body:
-            // Observer(
-            // builder: ((_) =>
-            Column(
-          children: [
-            ...transactions.getExtract(id).map((transaction) {
-              return ListBuys(transaction);
-            }).toList()
-          ],
-        )
-        // )),
-        );
+        title: Text(
+          'Extrato',
+          style: TextStyle(
+            color: Color(0xFF09A2B6),
+            fontSize: 16,
+            fontFamily: 'OpenSans',
+            fontWeight: FontWeight.bold,
+          ),
+          textAlign: TextAlign.right,
+        ),
+        backgroundColor: Color(0xFFF8FAFA),
+        elevation: 0,
+        centerTitle: true,
+      ),
+      body: Observer(
+          builder: ((_) => Column(
+                children: [
+                  ...transactions.getExtract(id).map((transaction) {
+                    return ListBuys(transaction);
+                  }).toList()
+                ],
+              ))),
+    );
   }
 }

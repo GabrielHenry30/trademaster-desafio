@@ -11,10 +11,7 @@ class ListBuys extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        // Observer(
-        //   builder: (_) =>
-        Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -29,7 +26,6 @@ class ListBuys extends StatelessWidget {
           return EachBuy(tr.message, tr.value, tr.portion);
         }).toList()
       ],
-      // ),
     );
   }
 }
