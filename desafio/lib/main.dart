@@ -1,3 +1,4 @@
+import 'package:desafio/app/app_module.dart';
 import 'package:desafio/app/modules/limit/features/extract_feature/extract_controller/extract_controller.dart';
 import 'package:desafio/app/modules/limit/features/limit_feature/limit_controller/limit_controller.dart';
 import 'package:desafio/app/modules/limit/limit_module.dart';
@@ -6,7 +7,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(ModularApp(module: LimitModule(), child: WireFlowState()));
+void main() => runApp(ModularApp(module: AppModule(), child: WireFlowState()));
 
 class WireFlowState extends StatelessWidget {
   @override
