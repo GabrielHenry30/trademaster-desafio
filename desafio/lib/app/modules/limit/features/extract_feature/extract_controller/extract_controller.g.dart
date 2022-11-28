@@ -51,6 +51,40 @@ mixin _$ExtractController on _ExtractController, Store {
   }
 
   @override
+  List<Transaction> getTransactionById(String id) {
+    final _$actionInfo = _$_ExtractControllerActionController.startAction(
+        name: '_ExtractController.getTransactionById');
+    try {
+      return super.getTransactionById(id);
+    } finally {
+      _$_ExtractControllerActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  List<String> getDates(List<Transaction> transactionsOrderById) {
+    final _$actionInfo = _$_ExtractControllerActionController.startAction(
+        name: '_ExtractController.getDates');
+    try {
+      return super.getDates(transactionsOrderById);
+    } finally {
+      _$_ExtractControllerActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  List<List<Transaction>> getTransactionsByDate(
+      List<Transaction> listTransactionOrderById, List<String> dates) {
+    final _$actionInfo = _$_ExtractControllerActionController.startAction(
+        name: '_ExtractController.getTransactionsByDate');
+    try {
+      return super.getTransactionsByDate(listTransactionOrderById, dates);
+    } finally {
+      _$_ExtractControllerActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 allTransactions: ${allTransactions}

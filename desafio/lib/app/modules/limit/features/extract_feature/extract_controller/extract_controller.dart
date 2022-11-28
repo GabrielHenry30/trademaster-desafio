@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:desafio/app/modules/limit/models/transaction.dart';
 import 'package:desafio/app/modules/limit/services/limit_services.dart';
 import 'package:mobx/mobx.dart';
@@ -9,51 +7,82 @@ part 'extract_controller.g.dart';
 class ExtractController = _ExtractController with _$ExtractController;
 
 abstract class _ExtractController with Store {
-  final LimitServices _limitService;
+  LimitServices _limitService;
   _ExtractController(this._limitService);
+
+  // @observable
+  // List<Transaction> transactions = _limitService.getListTransaction();
 
   @observable
   List<Transaction> allTransactions = [
     Transaction(
       id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 27',
+      message: 'COMPRA GERDAU LOJA 29',
       value: 1000.00,
-      date: '27/01',
-      portion: 10,
-    ),
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 27',
-      value: 2000.12,
-      date: '27/01',
-      portion: 11,
-    ),
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 27',
-      value: 8790.12,
-      date: '27/01',
-      portion: 11,
-    ),
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 03',
-      value: 9000.00,
-      date: '28/01',
-      portion: 10,
-    ),
-    Transaction(
-      id: 'gerdau',
-      message: 'COMPRA GERDAU LOJA 03',
-      value: 8500.00,
-      date: '28/01',
-      portion: 11,
+      date: '29/01',
+      portion: 1,
     ),
     Transaction(
       id: 'gerdau',
       message: 'COMPRA GERDAU LOJA 29',
-      value: 8000.00,
+      value: 1000.00,
       date: '29/01',
+      portion: 10,
+    ),
+    Transaction(
+      id: 'gerdau',
+      message: 'COMPRA GERDAU LOJA 29',
+      value: 1000.00,
+      date: '29/01',
+      portion: 10,
+    ),
+    Transaction(
+      id: 'gerdau',
+      message: 'COMPRA GERDAU LOJA 28',
+      value: 2000.12,
+      date: '28/01',
+      portion: 11,
+    ),
+    Transaction(
+      id: 'gerdau',
+      message: 'COMPRA GERDAU LOJA 28',
+      value: 8790.12,
+      date: '28/01',
+      portion: 11,
+    ),
+    Transaction(
+      id: 'gerdau',
+      message: 'COMPRA GERDAU LOJA 27',
+      value: 8790.12,
+      date: '27/01',
+      portion: 11,
+    ),
+    Transaction(
+      id: 'gerdau',
+      message: 'COMPRA GERDAU LOJA 27',
+      value: 9000.00,
+      date: '27/01',
+      portion: 10,
+    ),
+    Transaction(
+      id: 'gerdau',
+      message: 'COMPRA GERDAU LOJA 27',
+      value: 8500.00,
+      date: '27/01',
+      portion: 11,
+    ),
+    Transaction(
+      id: 'gerdau',
+      message: 'COMPRA GERDAU LOJA 27',
+      value: 8000.00,
+      date: '27/01',
+      portion: 11,
+    ),
+    Transaction(
+      id: 'gerdau',
+      message: 'COMPRA GERDAU LOJA 27',
+      value: 8000.00,
+      date: '27/01',
       portion: 11,
     ),
     Transaction(
@@ -74,25 +103,45 @@ abstract class _ExtractController with Store {
       id: 'unilever',
       message: 'COMPRA UNILEVER LOJA 03',
       value: 8790.12,
-      date: '27/01',
+      date: '28/01',
       portion: 12,
     ),
     Transaction(
       id: 'unilever',
       message: 'COMPRA UNILEVER LOJA 03',
       value: 8790.12,
-      date: '28/01',
+      date: '27/01',
       portion: 12,
     ),
   ];
 
+  //retorna uma lista pronta dos extratos a serem mostrados para cada ID
   @action
   List<List<Transaction>> getExtract(String id) {
     List<Transaction> transactionsOrderById = [];
+    List<Transaction> transactionsOrderByDate = [];
     List<String> dates = [];
-    List<List<Transaction>> transactionsOrderByDate = [];
+    List<List<Transaction>> transactionsGroupByDate = [];
 
-    //constroi uma lista de transações por id
+    transactionsOrderById = getTransactionById(id);
+    dates = getDates(transactionsOrderById);
+    transactionsGroupByDate = getTransactionsByDate(transactionsOrderById, dates);
+
+    return transactionsGroupByDate;
+  }
+
+  //retorna todos os extratos
+  @action
+  List<Transaction> getAllExtract() {
+    return allTransactions;
+  }
+
+  //retorna uma lista de transações por id
+  @action
+  List<Transaction> getTransactionById(String id) {
+    List<Transaction> allTransactions = getAllExtract();
+    List<Transaction> transactionsOrderById = [];
+
     allTransactions.forEach(
       ((tr) => {
             if (tr.id == id)
@@ -102,20 +151,10 @@ abstract class _ExtractController with Store {
           }),
     );
 
-    //constroi uma lista de datas da lista de transações por id
-    dates = getDates(transactionsOrderById);
-
-    //constroi uma lista de listas de transacoes agrupadas por data
-    transactionsOrderByDate = getTransactionsByDate(transactionsOrderById, dates);
-
-    return transactionsOrderByDate;
+    return transactionsOrderById;
   }
 
-  @action
-  List<Transaction> getAllExtract() {
-    return allTransactions;
-  }
-
+  //retorna uma lista de todas as datas de uma lista de transações de UM id
   @action
   List<String> getDates(List<Transaction> transactionsOrderById) {
     List<String> dates = [];
@@ -135,17 +174,19 @@ abstract class _ExtractController with Store {
     return dates;
   }
 
+  //retorna uma lista de lista de transações agrupadas por data
+  @action
   List<List<Transaction>> getTransactionsByDate(List<Transaction> listTransactionOrderById, List<String> dates) {
-    List<List<Transaction>> transactionsOrderByDate = [];
+    List<List<Transaction>> transactionsGroupByDate = [];
 
     for (var date in dates) {
       List<Transaction> transactionGroupByDate = [];
       for (var tr in listTransactionOrderById) {
         if (date == tr.date) transactionGroupByDate.add(tr);
       }
-      transactionsOrderByDate.add(transactionGroupByDate);
+      transactionsGroupByDate.add(transactionGroupByDate);
     }
 
-    return transactionsOrderByDate;
+    return transactionsGroupByDate;
   }
 }
