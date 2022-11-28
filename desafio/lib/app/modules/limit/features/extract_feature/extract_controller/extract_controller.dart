@@ -180,11 +180,11 @@ abstract class _ExtractController with Store {
     List<List<Transaction>> transactionsGroupByDate = [];
 
     for (var date in dates) {
-      List<Transaction> transactionGroupByDate = [];
+      List<Transaction> trByDate = [];
       for (var tr in listTransactionOrderById) {
-        if (date == tr.date) transactionGroupByDate.add(tr);
+        if (date == tr.date) trByDate.add(tr);
       }
-      transactionsGroupByDate.add(transactionGroupByDate);
+      transactionsGroupByDate.add(trByDate);
     }
 
     return transactionsGroupByDate;
