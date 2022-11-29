@@ -11,10 +11,7 @@ class LimitModule extends Module {
   static const extractCompleteRoute = '$route$extractRoute';
 
   @override
-  final List<Bind> binds = [
-    // Bind.singleton((i) => LimitServices()),
-    // Bind.singleton((i) => LimitController(i())),
-  ];
+  final List<Bind> binds = [];
 
   @override
   final List<ModularRoute> routes = [

@@ -5,10 +5,15 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-class ListBuys extends StatelessWidget {
+class ListBuys extends StatefulWidget {
   final List<Transaction> list;
   ListBuys(this.list);
 
+  @override
+  State<ListBuys> createState() => _ListBuysState();
+}
+
+class _ListBuysState extends State<ListBuys> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,11 +23,11 @@ class ListBuys extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 16, 0, 8),
           child: Text(
-            list.first.date,
+            widget.list.first.date,
             style: const TextStyle(fontSize: 16, fontFamily: 'Open Sans', fontWeight: FontWeight.bold),
           ),
         ),
-        ...list.map((tr) {
+        ...widget.list.map((tr) {
           return EachBuy(tr.message, tr.value, tr.portion);
         }).toList()
       ],

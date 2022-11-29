@@ -9,7 +9,12 @@ import 'package:provider/provider.dart';
 
 void main() => runApp(ModularApp(module: AppModule(), child: WireFlowState()));
 
-class WireFlowState extends StatelessWidget {
+class WireFlowState extends StatefulWidget {
+  @override
+  State<WireFlowState> createState() => _WireFlowStateState();
+}
+
+class _WireFlowStateState extends State<WireFlowState> {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(

@@ -1,11 +1,17 @@
 import 'package:desafio/app/modules/limit/features/limit_feature/limit_controller/limit_controller.dart';
 import 'package:desafio/app/modules/limit/features/limit_feature/components/cardview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:provider/provider.dart';
 
-class LimiteScreen extends StatelessWidget {
+class LimiteScreen extends StatefulWidget {
   LimiteScreen({super.key});
 
+  @override
+  _LimiteScreenState createState() => _LimiteScreenState();
+}
+
+class _LimiteScreenState extends ModularState<LimiteScreen, LimitController> {
   @override
   Widget build(BuildContext context) {
     final credits = Provider.of<LimitController>(context);

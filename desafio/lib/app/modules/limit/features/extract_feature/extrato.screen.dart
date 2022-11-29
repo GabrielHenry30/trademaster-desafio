@@ -10,10 +10,15 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:desafio/fictitiousData.dart';
 import 'package:provider/provider.dart';
 
-class ExtratoScreen extends StatelessWidget {
+class ExtratoScreen extends StatefulWidget {
   final String id;
   ExtratoScreen(this.id);
 
+  @override
+  _ExtratoScreenState createState() => _ExtratoScreenState();
+}
+
+class _ExtratoScreenState extends ModularState<ExtratoScreen, ExtractController> {
   @override
   Widget build(BuildContext context) {
     final transactions = Provider.of<ExtractController>(context);
@@ -46,7 +51,7 @@ class ExtratoScreen extends StatelessWidget {
       body: Observer(
           builder: ((_) => Column(
                 children: [
-                  ...transactions.getExtract(id).map((transaction) {
+                  ...transactions.getExtract(widget.id).map((transaction) {
                     return ListBuys(transaction);
                   }).toList()
                 ],
